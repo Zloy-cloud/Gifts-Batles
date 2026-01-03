@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>WARZONE HUB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <header class="topbar glass">
+        <div class="logo-block">
+            <div class="logo-cube">
+                <span class="logo-face logo-face-front">WZ</span>
+                <span class="logo-face logo-face-top">WZ</span>
+            </div>
+            <div class="logo-text">
+                <h1>WARZONE HUB</h1>
+                <p>Global chat • Drops • Market • Promo</p>
+            </div>
+        </div>
+
+        <div class="topbar-right">
+            <div class="user-badge">
+                <div class="avatar-circle neon-border"></div>
+                <div class="user-info">
+                    <span id="username">Player#1234</span>
+                    <span class="user-balance">
+                        <span id="balance">0</span> CR
+                    </span>
+                </div>
+            </div>
+            <button class="btn btn-neon" id="btnPromo">
+                Активировать промокод
+            </button>
+        </div>
+    </header>
+
+    <main class="layout">
+        <aside class="sidebar glass">
+            <nav class="nav">
+                <button class="nav-item active" data-section="chat">
+                    <span>Чат</span>
+                </button>
+                <button class="nav-item" data-section="drops">
+                    <span>Логи дропа</span>
+                </button>
+                <button class="nav-item" data-section="shop">
+                    <span>Магазин</span>
+                </button>
+                <button class="nav-item" data-section="market">
+                    <span>Рынок игроков</span>
+                </button>
+            </nav>
+
+            <div class="stats-block">
+                <h3>Онлайн</h3>
+                <p class="stats-number">134</p>
+                <h3>Всего дропа</h3>
+                <p class="stats-number">2 471</p>
+            </div>
+        </aside>
+
+        <section class="content">
+            <!-- ЧАТ -->
+            <div class="panel glass panel-active" id="section-chat">
+                <div class="panel-header">
+                    <h2>Глобальный чат</h2>
+                </div>
+                <div class="chat-window" id="chatWindow">
+                    <!-- сообщения чата -->
+                </div>
+                <div class="chat-input-row">
+                    <input type="text" id="chatInput" placeholder="Написать в чат..." />
+                    <button class="btn btn-neon" id="chatSend">Отправить</button>
+                </div>
+            </div>
+
+            <!-- ЛОГИ ДРОПА -->
+            <div class="panel glass" id="section-drops">
+                <div class="panel-header">
+                    <h2>Логи выпадения предметов</h2>
+                </div>
+                <div class="log-list" id="dropLog">
+                    <!-- сюда будем пушить логи -->
+                </div>
+            </div>
+
+            <!-- МАГАЗИН -->
+            <div class="panel glass" id="section-shop">
+                <div class="panel-header">
+                    <h2>Магазин</h2>
+                </div>
+                <div class="cards-grid" id="shopGrid">
+                    <!-- товары магазина -->
+                </div>
+            </div>
+
+            <!-- РЫНОК -->
+            <div class="panel glass" id="section-market">
+                <div class="panel-header">
+                    <h2>Рынок между игроками</h2>
+                </div>
+                <div class="cards-grid" id="marketGrid">
+                    <!-- лоты игроков -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модалка промокода -->
+    <div class="modal-backdrop" id="promoModal">
+        <div class="modal glass">
+            <h2>Активировать промокод</h2>
+            <p>Введи промокод, чтобы получить валюту или награду.</p>
+            <input type="text" id="promoInput" placeholder="Например: WARZONE2025" />
+            <div class="modal-actions">
+                <button class="btn btn-outline" id="promoCancel">Отмена</button>
+                <button class="btn btn-neon" id="promoApply">Активировать</button>
+            </div>
+            <p class="promo-status" id="promoStatus"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
